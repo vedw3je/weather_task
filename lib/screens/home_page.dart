@@ -71,11 +71,11 @@ class _HomePageState extends State<HomePage> {
           ),
           _weatherIcon(),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           _currentTemp(),
           const SizedBox(
-            height: 10,
+            height: 50,
           ),
           _extraInfo(),
         ],
@@ -164,10 +164,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Text(
-          _weather?.weatherDescription ?? "",
+          _weather?.weatherDescription!.toUpperCase() ?? "",
           style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ],
@@ -183,7 +184,7 @@ class _HomePageState extends State<HomePage> {
           "${_weather?.temperature?.celsius?.toStringAsFixed(0)}° C",
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 70,
+            fontSize: 40,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -194,7 +195,7 @@ class _HomePageState extends State<HomePage> {
           " / ${_weather?.temperature?.fahrenheit?.toStringAsFixed(0)}° F",
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 70,
+            fontSize: 40,
             fontWeight: FontWeight.w500,
           ),
         )
